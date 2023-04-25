@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NameFamDataApp.MainPage"
+             xmlns:viewmodel="clr-namespace:NameFamDataApp.ViewModel"
+             x:DataType="viewmodel:MainPageViewModel">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Frame BorderColor="Wheat" Margin="10">
+            <StackLayout>
+                <Entry Text="{Binding NameFill}" 
+                       Placeholder="Введите Имя" />
+                
+                <Entry Text="{Binding FamFill}" 
+                       Placeholder="Введите Фамилию" />
+                
+                <DatePicker Date="{Binding DateFill}"/>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Save" 
+                            Command="{Binding SaveClickCommand}" />
+                    
+                    <Button Text="Vosst" 
+                            Command="{Binding VosstClickCommand}" />
+                
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
