@@ -2,10 +2,17 @@
 
 class StringValidator
 {
-    public static bool Validate(string input)
+    public static string Validate(string input)
     {
-        // Поиск цифр и спец символов в строке
-        Regex regex = new Regex("[0-9!@#$%^&*()_+]");
-        return regex.IsMatch(input);
+        string error = null;
+        if(input == "")
+        {
+            error = "Поле не должно быть пустым!";
+        }
+        if(Regex.IsMatch(input, @"[\d\W]"))
+        {
+            error = "Поле не должно содержать цифр или спецсимволов";
+        }
+        return error;
     }
 }
